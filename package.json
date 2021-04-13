@@ -2,6 +2,9 @@
   "name": "react-graphql-file-upload",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.22.2"
