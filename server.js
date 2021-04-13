@@ -1,10 +1,10 @@
 const { ApolloServer, gql } = require('apollo-server');
+const path = require('path');
+const fs = require('fs');
 
 const typeDefs = gql`
   type File {
-    filename: String!
-    mimetype: String!
-    encoding: String!
+    url: String!
   }
 
   type Query {
@@ -21,13 +21,16 @@ const resolvers = {
     hello: () => 'Hello World',
   },
   Mutation: {
-    singleUpload: (parent, args) => {
-      return args.file.then(file => {
-        //Contents of Upload scalar: https://github.com/jaydenseric/graphql-upload#class-graphqlupload
-        //file.createReadStream() is a readable node stream that contains the contents of the uploaded file
-        //node stream api: https://nodejs.org/api/stream.html
-        return file;
-      });
+    uploadFile: async (parent, { file }) => {
+      const { createReadStream, filename, mimetype, encoding } = await file;
+
+      const stream = createReadStream();
+      const pathName = path.join(__dirname, `/public/images/${filename}`);
+      await stream.pipe(fs.createWriteStream(pathName));
+
+      return {
+        url: `http://localhost:4000/images/${filename}`
+      }
     },
   },
 };
