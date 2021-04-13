@@ -2,6 +2,8 @@ import React from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import { createUploadLink } from 'apollo-upload-client';
 
+import UploadForm from './UploadForm';
+
 const client = new ApolloClient({
   link: createUploadLink({
     uri: 'http://localhost:4000'
@@ -12,9 +14,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        Hello World
-      </div>
+      <UploadForm />
     </ApolloProvider>
   );
 }
