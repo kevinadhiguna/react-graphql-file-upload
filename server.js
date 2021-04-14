@@ -22,7 +22,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    uploads: [File]
+    hello: String!
   }
 
   type Mutation {
