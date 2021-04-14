@@ -42,6 +42,11 @@ const server = new ApolloServer({
   resolvers,
 });
 
-server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+const app = express();
+server.applyMiddleware({ app });
+
+app.use(express.static('public'));
+
+app.listen({ port: 4000 }, () => {
+  console.log(`🚀 Server ready at http://localhost:4000`);
 });
