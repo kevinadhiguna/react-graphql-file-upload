@@ -15,7 +15,7 @@ export default function UploadForm() {
   });
   
   const handleFileChange = e => {
-    const file = e.target.file[0];
+    const file = e.target.files[0];
     
     if (!file) return;
 
