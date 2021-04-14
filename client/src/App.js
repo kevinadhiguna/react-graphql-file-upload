@@ -6,7 +6,7 @@ import UploadForm from './UploadForm';
 
 const client = new ApolloClient({
   link: createUploadLink({
-    uri: 'http://localhost:4000'
+    uri: 'http://localhost:4000/graphql'
   }),
   cache: new InMemoryCache()
 });
