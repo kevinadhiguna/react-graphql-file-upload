@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server-express');
 // Although 'express' has not been installed yet, It has been used in the background so we can import it.
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 
