@@ -37,6 +37,9 @@ const resolvers = {
     uploadFile: async (parent, { file }) => {
       const { createReadStream, filename, mimetype, encoding } = await file;
 
+      const { ext } = path.parse(filename);
+      const randomName = generateRandomString(12) + ext;
+
       const stream = createReadStream();
       const pathName = path.join(__dirname, `/public/images/${filename}`);
       await stream.pipe(fs.createWriteStream(pathName));
