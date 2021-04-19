@@ -10,6 +10,7 @@
     "apollo-server": "^2.22.2",
     "apollo-server-express": "^2.22.2",
     "cors": "^2.8.5",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "graphql-upload": "^11.0.0"
   }
 }
