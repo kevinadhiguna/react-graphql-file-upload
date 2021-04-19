@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
+const graphqlUploadExpress = require('graphql-upload');
 
 function generateRandomString(length) {
   var result           = [];
@@ -55,6 +56,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  uploads: false
 });
 
 const app = express();
@@ -62,6 +64,7 @@ server.applyMiddleware({ app });
 
 app.use(express.static('public'));
 app.use(cors());
+app.use(graphqlUploadExpress({ maxFileSize: 1000000000, maxFiles: 10 }));
 
 app.listen({ port: 4000 }, () => {
   console.log(`🚀 Server ready at http://localhost:4000`);
