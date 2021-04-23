@@ -11,3 +11,5 @@ Currently under development.
 
 ### Server :<br>
 <img src="https://i.ibb.co/hHvmwX7/hello.png" />
+
+[![Visits Badge](https://badges.pufler.dev/visits/kevinadhiguna/react-graphql-file-upload)](https://github.com/kevinadhiguna)
