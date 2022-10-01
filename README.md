@@ -12,4 +12,4 @@ Currently under development.
 ### Server :<br>
 <img src="https://i.ibb.co/hHvmwX7/hello.png" />
 
-[![Visits Badge](https://badges.pufler.dev/visits/kevinadhiguna/react-graphql-file-upload)](https://github.com/kevinadhiguna)
+![Hello !](https://api.visitorbadge.io/api/VisitorHit?user=kevinadhiguna&repo=react-graphql-file-upload&label=thanks%20for%20dropping%20in%20!&labelColor=%23000000&countColor=%23FFFFFF)
